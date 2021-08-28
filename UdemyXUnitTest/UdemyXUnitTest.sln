@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyXUnitTest.APP", "UdemyXUnitTest.APP\UdemyXUnitTest.APP.csproj", "{88D0AA50-6D32-41BD-9BD6-3C71C0A5D05C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyXUnitTest.App", "UdemyXUnitTest.APP\UdemyXUnitTest.App.csproj", "{88D0AA50-6D32-41BD-9BD6-3C71C0A5D05C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyUnitTest.Test", "UdemyUnitTest.Test\UdemyUnitTest.Test.csproj", "{AFD30CED-70B6-43A2-8498-1DA783E294C1}"
 EndProject
