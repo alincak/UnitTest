@@ -38,5 +38,22 @@ namespace UdemyXUnitTest.Test
       Assert.IsAssignableFrom<double>(20.10);
     }
 
+    [Theory]
+    [InlineData(2, 5, 7)]
+    [InlineData(10, 5, 15)]
+    [InlineData(2, 10, 12)]
+    [InlineData(9, 8, 17)]
+    public void AddTest2(int a, int b, int expectedTotal)
+    {
+      //arrange
+      var calculator = new Calculator();
+
+      //act
+      var actTotal = calculator.Add(a, b);
+
+      //assert
+      Assert.Equal(expectedTotal, actTotal);
+    }
+
   }
 }
