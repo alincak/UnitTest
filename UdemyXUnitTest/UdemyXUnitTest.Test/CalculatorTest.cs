@@ -1,4 +1,5 @@
-﻿using UdemyXUnitTest.App;
+﻿using System.Collections.Generic;
+using UdemyXUnitTest.App;
 using Xunit;
 
 namespace UdemyXUnitTest.Test
@@ -19,5 +20,23 @@ namespace UdemyXUnitTest.Test
       //assert
       Assert.Equal(25, total);
     }
+
+    [Fact]
+    public void AssertExamplesTest()
+    {
+      //var names = new List<string>() { "Fatih", "Emre", "Hasan" };
+      //Assert.Contains(names, x => x == "Fatih");
+
+      //Assert.Contains("hikaye", "Size bir hikayem var");
+      //Assert.DoesNotContain("hikayesi", "Size bir hikayem var");
+
+      //var regex = "^kedi";
+      //Assert.Matches(regex, "kedi çok tatlı :)");
+
+      //Assert.InRange(10, 2, 20);
+
+      Assert.IsAssignableFrom<double>(20.10);
+    }
+
   }
 }
