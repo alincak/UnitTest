@@ -13,19 +13,19 @@ namespace UdemyXUnitTest.Test
       _calculator = new Calculator();
     }
 
-    [Fact]
-    public void AddTest()
-    {
-      //arrange
-      int a = 5;
-      int b = 20;
+    //[Fact]
+    //public void AddTest()
+    //{
+    //  //arrange
+    //  int a = 5;
+    //  int b = 20;
 
-      //act
-      var total = _calculator.Add(a, b);
+    //  //act
+    //  var total = _calculator.Add(a, b);
 
-      //assert
-      Assert.Equal(25, total);
-    }
+    //  //assert
+    //  Assert.Equal(25, total);
+    //}
 
     [Fact]
     public void AssertExamplesTest()
@@ -47,9 +47,23 @@ namespace UdemyXUnitTest.Test
     [Theory]
     [InlineData(2, 5, 7)]
     [InlineData(10, 5, 15)]
-    [InlineData(2, 10, 12)]
-    [InlineData(9, 8, 17)]
+    [InlineData(0, 10, 0)]
+    [InlineData(9, 0, 0)]
     public void AddTest2(int a, int b, int expectedTotal)
+    {
+      //act
+      var actTotal = _calculator.Add(a, b);
+
+      //assert
+      Assert.Equal(expectedTotal, actTotal);
+    }
+
+    [Theory]
+    [InlineData(2, 5, 7)]
+    [InlineData(10, 5, 15)]
+    [InlineData(0, 10, 0)]
+    [InlineData(9, 0, 0)]
+    public void Add_SimpleValues_ReturnTotalValue(int a, int b, int expectedTotal)
     {
       //act
       var actTotal = _calculator.Add(a, b);
