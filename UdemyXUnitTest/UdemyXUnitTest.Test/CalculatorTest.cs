@@ -10,7 +10,7 @@ namespace UdemyXUnitTest.Test
 
     public CalculatorTest()
     {
-      _calculator = new Calculator();
+      _calculator = null; //new Calculator();
     }
 
     //[Fact]
