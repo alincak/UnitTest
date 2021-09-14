@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using Moq;
 using UdemyXUnitTest.App;
 using Xunit;
 
@@ -6,11 +6,13 @@ namespace UdemyXUnitTest.Test
 {
   public class CalculatorTest
   {
-    private Calculator _calculator;
+    private readonly Calculator _calculator;
+    private readonly Mock<ICalculatorService> myMock;
 
     public CalculatorTest()
     {
-      _calculator = null; //new Calculator();
+      myMock = new Mock<ICalculatorService>();
+      _calculator = new Calculator(myMock.Object);
     }
 
     //[Fact]
@@ -65,8 +67,28 @@ namespace UdemyXUnitTest.Test
     [InlineData(9, 0, 0)]
     public void Add_SimpleValues_ReturnTotalValue(int a, int b, int expectedTotal)
     {
+      myMock.Setup(x => x.Add(a, b)).Returns(expectedTotal);
+      myMock.Setup(x => x.Multip(a, b)).Returns(expectedTotal);
+
+
       //act
       var actTotal = _calculator.Add(a, b);
+
+      //assert
+      Assert.Equal(expectedTotal, actTotal);
+    }
+
+    [Theory]
+    [InlineData(2, 5, 10)]
+    [InlineData(10, 5, 50)]
+    [InlineData(0, 10, 0)]
+    [InlineData(9, 0, 0)]
+    public void Multip_SimpleValues_ReturnMultipValue(int a, int b, int expectedTotal)
+    {
+      myMock.Setup(x => x.Multip(a, b)).Returns(expectedTotal);
+
+      //act
+      var actTotal = _calculator.Multip(a, b);
 
       //assert
       Assert.Equal(expectedTotal, actTotal);

@@ -11,5 +11,11 @@
 
       return a + b;
     }
+
+    public int Multip(int a, int b)
+    {
+      return a * b;
+    }
+
   }
 }

@@ -13,5 +13,10 @@
     {
       return _calculatorService.Add(a, b);
     }
+
+    public int Multip(int a, int b)
+    {
+      return _calculatorService.Multip(a, b);
+    }
   }
 }
