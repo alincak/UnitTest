@@ -68,14 +68,14 @@ namespace UdemyXUnitTest.Test
     public void Add_SimpleValues_ReturnTotalValue(int a, int b, int expectedTotal)
     {
       myMock.Setup(x => x.Add(a, b)).Returns(expectedTotal);
-      myMock.Setup(x => x.Multip(a, b)).Returns(expectedTotal);
-
 
       //act
       var actTotal = _calculator.Add(a, b);
 
       //assert
       Assert.Equal(expectedTotal, actTotal);
+
+      myMock.Verify(x => x.Add(a, b), Times.Once);
     }
 
     [Theory]
