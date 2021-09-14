@@ -1,4 +1,5 @@
 ﻿using Moq;
+using System;
 using UdemyXUnitTest.App;
 using Xunit;
 
@@ -53,6 +54,8 @@ namespace UdemyXUnitTest.Test
     [InlineData(9, 0, 0)]
     public void AddTest2(int a, int b, int expectedTotal)
     {
+      myMock.Setup(x => x.Add(a, b)).Returns(expectedTotal);
+
       //act
       var actTotal = _calculator.Add(a, b);
 
@@ -92,6 +95,20 @@ namespace UdemyXUnitTest.Test
 
       //assert
       Assert.Equal(expectedTotal, actTotal);
+    }
+
+    [Theory]
+    [InlineData(2, 5, 10)]
+    [InlineData(10, 5, 50)]
+    public void Multip_ZeroValue_ReturnException(int a, int b, int expectedTotal)
+    {
+      myMock.Setup(x => x.Multip(a, b))
+        .Throws(new Exception("a = 0 olamaz."));
+
+      //assert
+      var exception = Assert.Throws<Exception>(() => _calculator.Multip(a, b));
+
+      Assert.Equal("a = 0 olamaz.", exception.Message);
     }
 
   }
