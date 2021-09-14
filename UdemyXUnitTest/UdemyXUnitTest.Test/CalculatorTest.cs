@@ -88,13 +88,19 @@ namespace UdemyXUnitTest.Test
     [InlineData(9, 0, 0)]
     public void Multip_SimpleValues_ReturnMultipValue(int a, int b, int expectedTotal)
     {
-      myMock.Setup(x => x.Multip(a, b)).Returns(expectedTotal);
+      var actualMultip = 0;
+
+      myMock.Setup(x => x.Multip(It.IsAny<int>(), It.IsAny<int>()))
+        .Callback<int, int>((x, y) => actualMultip = x * y);
 
       //act
-      var actTotal = _calculator.Multip(a, b);
+      _calculator.Multip(a, b);
 
       //assert
-      Assert.Equal(expectedTotal, actTotal);
+      Assert.Equal(expectedTotal, actualMultip);
+
+      _calculator.Multip(5, 20);
+      Assert.Equal(100, actualMultip);
     }
 
     [Theory]
