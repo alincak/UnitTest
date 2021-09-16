@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyXUnitTest.App", "UdemyXUnitTest.APP\UdemyXUnitTest.App.csproj", "{88D0AA50-6D32-41BD-9BD6-3C71C0A5D05C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyXUnitTest.Test", "UdemyXUnitTest.Test\UdemyXUnitTest.Test.csproj", "{01B13AB8-BD64-4A8B-B633-6229821745A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyXUnitTest.Test", "UdemyXUnitTest.Test\UdemyXUnitTest.Test.csproj", "{01B13AB8-BD64-4A8B-B633-6229821745A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyXUnitTest.Web", "UdemyXUnitTest.Web\UdemyXUnitTest.Web.csproj", "{79ECD2A3-EC26-49A7-BAAB-B58DFCEF5A50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{01B13AB8-BD64-4A8B-B633-6229821745A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01B13AB8-BD64-4A8B-B633-6229821745A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01B13AB8-BD64-4A8B-B633-6229821745A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ECD2A3-EC26-49A7-BAAB-B58DFCEF5A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ECD2A3-EC26-49A7-BAAB-B58DFCEF5A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ECD2A3-EC26-49A7-BAAB-B58DFCEF5A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ECD2A3-EC26-49A7-BAAB-B58DFCEF5A50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
